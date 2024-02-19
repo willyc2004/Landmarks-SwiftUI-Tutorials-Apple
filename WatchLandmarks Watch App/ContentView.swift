@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  Landmarks
+//  WatchLandmarks Watch App
 //
-//  Created by MacBook Pro on 16/02/24.
+//  Created by MacBook Pro on 19/02/24.
 //
 
 import SwiftUI
