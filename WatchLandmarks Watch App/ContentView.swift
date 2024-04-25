@@ -1,24 +1,21 @@
-//
-//  ContentView.swift
-//  WatchLandmarks Watch App
-//
-//  Created by MacBook Pro on 19/02/24.
-//
-
 import SwiftUI
+import UserNotifications
+
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        LandmarkList()
+            .task {
+                let center = UNUserNotificationCenter.current()
+                _ = try? await center.requestAuthorization(
+                    options: [.alert, .sound, .badge]
+                )
+            }
     }
 }
 
+
 #Preview {
     ContentView()
+        .environment(ModelData())
 }
